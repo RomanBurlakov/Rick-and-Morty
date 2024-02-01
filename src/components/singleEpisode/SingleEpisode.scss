@@ -1,0 +1,79 @@
+@import '../../style/variables.scss';
+
+.single-episode {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    &__name {
+        font-weight: bold;
+        font-size: 40px;
+    }
+    &__descr {
+        font-size: 30px;
+        line-height: 24px;
+        margin-top: 25px;
+    }
+    &__chars {
+        font-size: 26px;
+        line-height: 32px;
+        color: $main-color;
+        margin-top: 15px;
+        width: 70%;
+        a {
+            color: $main-color;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: $main-color-dark;
+        }
+        // a {
+        // color: $main-color;
+        // transition: all;
+        // display: inline-block;
+        // padding-bottom:2px;
+        // background-image: linear-gradient($main-color 0 0);
+        // background-position: 100% 100%;
+        // background-size: 100% 2px;
+        // background-repeat: no-repeat;
+        // transition: background-size 0.3s, background-position 0s 0.3s;
+        // }
+        // a:hover {
+        //     color: $main-color-dark;
+        //     background-image: linear-gradient($main-color-dark 0 0);
+        //     background-position: 0 100%;
+        //     background-size: 0 2px;
+        // }
+    }
+    &__navigation-buttons {
+        margin-top: 50px;
+        height: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        button {
+            margin-top: 0;
+            font-weight: bold;
+            img {
+                position: absolute;
+                top: 2px;
+            }
+        }
+    }
+}
+@media (max-width: 900px) {
+    .single-episode {
+        &__chars {
+            width: 96%;
+        }
+    }
+}
+@media (max-width: 700px) {
+    .single-episode {
+        &__navigation-buttons {
+            padding: 0 5px;
+        }
+    }
+}

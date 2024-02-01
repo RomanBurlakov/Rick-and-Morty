@@ -1,0 +1,74 @@
+@import '../../style/variables.scss';
+
+.app {
+    &__header{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 37px;
+        span {
+            color: $main-color;
+        }
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+        &-separator {
+            margin: 10px;
+        }
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 40px;
+            li {
+                a:hover {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 700px) {
+    .app {
+        &__header{
+            padding: 0 5px;
+            img {
+                height: 12vmin;
+            }
+        }
+        &__menu {
+            ul {
+                font-size: 30px;
+            }
+        }
+    }
+}
+@media (max-width: 450px) {
+    .app {
+        &__menu {
+            &-separator {
+                margin: 5px;
+            }
+            ul {
+                font-size: 25px;
+            }
+        }
+    }
+}
+@media (max-width: 350px) {
+    .app {
+        &__menu {
+            &-separator {
+                margin: 3px;
+            }
+            ul {
+                font-size: 20px;
+            }
+        }
+    }
+}
