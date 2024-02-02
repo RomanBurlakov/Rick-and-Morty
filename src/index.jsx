@@ -5,8 +5,8 @@ import './style/style.scss';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
-    <HashRouter basename='/Rick-and-Morty' hashType='slash'>
+    <BrowserRouter basename='/Rick-and-Morty'>
         <App />
-    </HashRouter>
+    </BrowserRouter>
 );
 
