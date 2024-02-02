@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://github.com/RomanBurlakov/Rick-and-Morty",
+  "homepage": "https://github.com/RomanBurlakov/Rick-and-Morty/",
   "scripts": {
     "dev": "vite dev",
     "host": "vite --host",
