@@ -5,7 +5,7 @@ import './style/style.scss';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter basename='/Rick-and-Morty'>
+    <BrowserRouter>
         <App />
     </BrowserRouter>
 );

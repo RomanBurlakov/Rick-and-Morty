@@ -54,7 +54,7 @@ function CharInfo({ activeCharId }) {
             <div className="char__info" >
                 <button className='char__close' onClick={coloseModal}>✖</button>
                 {
-                    error ? <ErrorMassage /> : loading ? <Spinner size={300} /> : charInfo ? <ViewCharInfo charInfo={charInfo} /> : <Skeleton />
+                    error ? <ErrorMassage /> : loading ? <Spinner size={300} /> : charInfo ? <ViewCharInfo charInfo={charInfo} coloseModal={coloseModal} /> : <Skeleton />
                 }
             </div>
         </div>
@@ -97,7 +97,7 @@ const StatusIcon = ({ style, children }) => {
     )
 }
 
-const ViewCharInfo = ({ charInfo: { name, image, props } }) => {
+const ViewCharInfo = ({ charInfo: { name, image, props }, coloseModal }) => {
 
     return (
         <>
@@ -113,7 +113,7 @@ const ViewCharInfo = ({ charInfo: { name, image, props } }) => {
                                         return
                                     } else if (e[0] === 'first seen') {
                                         return (
-                                            < TR key={i} name={e[0]} value={<Link to={'/episodes/' + e[1].url}>{e[1].name}</Link>} />
+                                            < TR key={i} name={e[0]} value={<Link onClick={coloseModal} to={'/episodes/' + e[1].url}>{e[1].name}</Link>} />
                                         )
                                     }
                                     return (
