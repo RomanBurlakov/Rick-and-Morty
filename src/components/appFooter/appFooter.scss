@@ -5,7 +5,8 @@
         width: 100%;
         height: 100px;
         background-color: $dark;
-        margin-top: 30px;
+        position: absolute;
+        bottom:0;
     }
     &__footer-links {
         height: 100%;
