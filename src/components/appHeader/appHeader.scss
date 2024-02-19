@@ -4,6 +4,7 @@
     &__header{
         display: flex;
         justify-content: space-between;
+        margin: 10px auto;
     }
     &__title {
         font-weight: bold;
@@ -37,6 +38,7 @@
     .app {
         &__header{
             padding: 0 5px;
+            margin: 5px auto;
             img {
                 height: 12vmin;
             }

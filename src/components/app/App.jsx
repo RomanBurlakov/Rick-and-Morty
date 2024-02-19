@@ -14,7 +14,7 @@ function App() {
 			<main className='app__content'>
 				<Routes>
 					<Route path='/' element={<MainPage />} />
-					<Route path='/:id' element={<MainPage />} />
+					<Route path='/character/:id' element={<MainPage />} />
 					{/* <Route path='/characters' element={<MainPage />} />
 					<Route path='/characters/:id' element={<MainPage />} /> */}
 					<Route path='/episodes' element={<Episodes />} />

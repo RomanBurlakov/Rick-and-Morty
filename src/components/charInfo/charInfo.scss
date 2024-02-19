@@ -17,15 +17,24 @@
             text-transform: uppercase;
             text-align: center;
         }
-        .skeleton {
-            margin-top: 20px;
-        }
+    }
+    &__select {
+        font-size: 18px;
+        margin-bottom: 20px;
     }
     &__modal-blur {
         display: block;
     }
     &__close {
             display: none;
+            border: none;
+            background-color: transparent;
+            font-size: 40px;
+            line-height: 40px;
+            margin-bottom: 5px;
+            position: absolute;
+            left: -35px;
+            top: 0;
         }
     &__basics {
         img {
@@ -100,18 +109,13 @@
 @media (max-width: 990px) {
     .char {
         &__info {
-            position: static;
             width: 50%;
             height: 100%;
             margin-left: auto;
+            position: relative;
         }
         &__close {
             display: block;
-            border: none;
-            background-color: transparent;
-            font-size: 35px;
-            line-height: 35px;
-            margin-bottom: 5px;
         }
         &__modal-blur {
             height: 100%;

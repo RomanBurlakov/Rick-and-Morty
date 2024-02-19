@@ -8,12 +8,19 @@
         width: 50%;
         padding: 10px;
         display: flex;
+        justify-content: flex-start;
         column-gap: 30px;
         position: relative;
     }
     &__img {
         height: 100%;
         object-fit: contain;
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px 0;
     }
     &__info {
         display: flex;
@@ -27,9 +34,6 @@
         justify-content: flex-start;
         column-gap: 20px;
         row-gap: 20px;
-        position: absolute;
-        bottom: 25px;
-        left: 270px;
         .try {
             display: none;
         }
@@ -89,10 +93,20 @@
 }
 @media (max-width: 620px) {
     .randomchar {
+        &__container {
+            padding: 0;
+        }
+        &__block {
+            justify-content: space-evenly;
+        }
+        &__info {
+            text-align: center;
+        }
         &__buttons {
             row-gap: 5px;
             bottom: 5px;
             flex-direction: column;
+            align-items: center;
             button {
                 width: 200px;
             }
@@ -108,15 +122,6 @@
         }
         &__info {
             row-gap: 5px;
-        }
-        &__name {
-            font-size: 20px;
-        }
-        &__descr {
-            font-size: 18px;
-        }
-        &__buttons {
-            left: 205px;
         }
     }
 }

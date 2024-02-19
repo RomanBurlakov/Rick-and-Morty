@@ -1,17 +1,17 @@
-import { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import RandomChar from '../components/randomChar/RandomChar'
 import CharList from '../components/charList/CharList'
 import CharInfo from '../components/charInfo/CharInfo'
 
 function MainPage() {
-	const [activeCharId, setActiveCharId] = useState(null);
+	const { id } = useParams();
 
 	return (
 		<>
-			<RandomChar onCharSelected={setActiveCharId} />
+			<RandomChar />
 			<div className='char__content'>
-				<CharList onCharSelected={setActiveCharId} activeCharId={activeCharId} />
-				<CharInfo activeCharId={activeCharId} />
+				<CharList activeCharId={id} />
+				<CharInfo activeCharId={id} />
 			</div>
 		</>
 	)

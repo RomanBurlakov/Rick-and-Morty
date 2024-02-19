@@ -4,24 +4,19 @@ import useAPIServices from '../../services/APIService'
 import Skeleton from '../skeleton/Skeleton'
 import Spinner from '../spinner/Spinner';
 import ErrorMassage from '../errorMassage/ErrorMassage'
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function CharInfo({ activeCharId }) {
     const [charInfo, setCharInfo] = useState(null);
     const charInfoRef = useRef();
-    const { id } = useParams();
 
     const { loading, error, getCharacterById } = useAPIServices(false);
 
     useEffect(() => {
-        if (id) {
-            updateChar(id);
-        }
-    }, [id])
-
-    useEffect(() => {
-        if (activeCharId?.id) {
-            updateChar(activeCharId.id);
+        if (activeCharId) {
+            updateChar(activeCharId);
+        } else {
+            setCharInfo(null);
         }
     }, [activeCharId])
 

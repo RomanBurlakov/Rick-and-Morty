@@ -7,17 +7,25 @@ function ActiveLink({ isActive, isPending }) {
 		color: isActive ? '#00a1b7' : isPending ? 'green' : ''
 	}
 }
+function ActiveLinkChars({ isActive, isPending }) {
+	if (window.location.href.includes('character')) {
+		isActive = true;
+	}
+	return {
+		color: isActive ? '#00a1b7' : isPending ? 'green' : ''
+	}
+}
 
 const AppHeader = () => {
 	return (
-		<header>
+		<header className='app__header'>
 			<div className='app__content app__header'>
 				<Link to='/'>
 					<img src={logo} alt="Rick and Morty Logo" style={{}} />
 				</Link>
 				<nav className='app__menu'>
 					<ul>
-						<li><NavLink to='/characters' title='Characters' style={ActiveLink}>Characters</NavLink></li>
+						<li><NavLink to='/' title='Characters' style={ActiveLinkChars}>Characters</NavLink></li>
 						<li className='app__menu-separator'>/</li>
 						<li><NavLink to='/episodes' title='Episodes' style={ActiveLink}>Episodes</NavLink></li>
 					</ul>

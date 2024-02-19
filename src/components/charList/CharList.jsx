@@ -5,13 +5,14 @@ import Spinner from '../spinner/Spinner'
 import ErrorMassage from '../errorMassage/ErrorMassage'
 import { Link } from 'react-router-dom'
 
-function CharList({ activeCharId, onCharSelected }) {
-	const [charList, setCharlist] = useState([])
-	const [charsOver, setCharsOver] = useState(false)
-	const { loading, error, getAllCharacters } = useAPIServices(true)
+function CharList({ activeCharId }) {
+	const [charList, setCharlist] = useState([]);
+	const [charsOver, setCharsOver] = useState(false);
+	const { loading, error, getAllCharacters } = useAPIServices(true);
 
 	useEffect(() => {
-		loadCharList()
+		loadCharList();
+
 	}, [])
 
 	function loadCharList() {
@@ -25,18 +26,12 @@ function CharList({ activeCharId, onCharSelected }) {
 	}
 
 	const characters = charList.map((e, i) => {
-		const activeClass = activeCharId?.id === e.id ? ' char__item_selected' : ''
+		const activeClass = activeCharId === String(e.id) ? 'char__item_selected' : '';
 		return (
-			<li className={'char__item' + activeClass}
-				onClick={() => onCharSelected({ id: e.id })}
-				onKeyDown={(event) => {
-					if (event.key === 'Enter') {
-						onCharSelected({ id: e.id })
-					}
-				}}
+			<li className={'char__item ' + activeClass}
 				tabIndex={0}
 				key={i}>
-				<Link to={'/characters/' + e.id} >
+				<Link to={'/character/' + e.id} >
 					<img src={e.image} alt={e.name} />
 					<div className='char__name'>{e.name}</div>
 				</Link>
