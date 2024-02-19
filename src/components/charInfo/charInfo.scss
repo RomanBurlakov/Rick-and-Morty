@@ -33,8 +33,8 @@
             line-height: 40px;
             margin-bottom: 5px;
             position: absolute;
-            left: -35px;
-            top: 0;
+            left: -40px;
+            top: 5px;
         }
     &__basics {
         img {
@@ -121,10 +121,10 @@
             height: 100%;
             width: 100%;
             position: fixed;
-            display: block;
             top: 0;
             right: -100%;;
             backdrop-filter: blur(5px);
+            //transition: right 0.5s linear;
         }
     }
 }

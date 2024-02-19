@@ -6,7 +6,7 @@ import useAPIServices from '../../services/APIService'
 import Spinner from '../spinner/Spinner'
 import ErrorMassage from '../errorMassage/ErrorMassage'
 
-function RandomChar({ onCharSelected }) {
+function RandomChar() {
 	const [char, setChar] = useState({})
 
 	const { loading, error, getRandomCharacter } = useAPIServices(true)
@@ -49,7 +49,7 @@ const ViewChar = ({ char: { id, name, image, status, species }, updateChar }) =>
 			<div className='randomchar__container'>
 				<div className='randomchar__info'>
 					<p className='randomchar__name'>{name}</p>
-					<p className='randomchar__descr'>{status + ' — ' + species}</p>
+					<p className='randomchar__descr'>{species + ' — ' + status}</p>
 				</div>
 				<div className='randomchar__buttons' >
 					<Link to={'/character/' + id} >
