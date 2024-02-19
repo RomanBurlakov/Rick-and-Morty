@@ -13,10 +13,10 @@ function App() {
 			<AppHeader />
 			<main className='app__content'>
 				<Routes>
-					<Route path='/' element={<Redirect path='/characters' />} />
-					<Route path='/Rick-and-Morty' element={<Redirect path='/characters' />} />
-					<Route path='/characters' element={<MainPage />} />
-					<Route path='/characters/:id' element={<MainPage />} />
+					<Route path='/' element={<MainPage />} />
+					<Route path='/:id' element={<MainPage />} />
+					{/* <Route path='/characters' element={<MainPage />} />
+					<Route path='/characters/:id' element={<MainPage />} /> */}
 					<Route path='/episodes' element={<Episodes />} />
 					<Route path='/episodes/:id' element={<Episode />} />
 					<Route path='*' element={<Page404 />} />
